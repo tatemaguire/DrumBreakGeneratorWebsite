@@ -1,0 +1,3 @@
+[submodule "DrumBreakGenerator"]
+	path = DrumBreakGenerator
+	url = https://github.com/tatemaguire/DrumBreakGenerator.git
