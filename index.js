@@ -1,3 +1,7 @@
+
+
+
+
 const densityInput = document.getElementById("densityInput");
 const generateButton = document.getElementById("generateButton");
 
