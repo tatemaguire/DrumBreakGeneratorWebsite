@@ -7,11 +7,18 @@
     <title>Drum Break Generator</title>
 </head>
 <body>
-    <p>Density [0.0 - 1.0]: </p>
+    <p>Density [0.0 - 1.0]:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Subdivision Density[0.0 - 1.0]:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chaos[0.0 - 1.0]: </p>
     <input id="densityInput" type="number" value="0.5">
+    <input id="subDensityInput" type="number" value="0.5">
+    <input id="chaosInput" type="number" value="0.5">
     <br>
     <br>
     <button id="generateButton">Generate MIDI File</button>
+    <br>
+    <br>
+    <p id="outputText"></p>
+    <br>
+    <a id="downloadLink" download="out.mid" style="visibility: hidden;">DOWNLOAD OUT.MID</a>
 </body>
 <script async type="text/javascript" src="generator.js"></script>
 <script src="./index.js"></script>
