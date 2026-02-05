@@ -11,4 +11,5 @@ EMSCRIPTEN_BINDINGS(my_module) {
         .function("writeToFile", &MIDISequence::writeToFile)
         .function("to_string", &MIDISequence::to_string);
     function("generateSequence", &generateSequence);
+    function("randInt", &randInt);
 }
