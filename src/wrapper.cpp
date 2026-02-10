@@ -7,10 +7,8 @@
 using namespace emscripten;
 
 val writeToJSBuffer(MIDISequence seq) {
-    std::string str = seq.writeToBuffer();
-    unsigned char* buff = (unsigned char*)(str.data());
-    size_t bufferLength = str.length();
-    return val(typed_memory_view(bufferLength, buff));
+    std::vector<MIDISequence::Byte> buff = seq.writeToBuffer();
+    return val(typed_memory_view(buff.size(), buff.data()));
 }
 
 EMSCRIPTEN_BINDINGS(my_module) {

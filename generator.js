@@ -2882,6 +2882,8 @@ ${functionBody}
       __emval_decref(handle);
     };
 
+  var _emscripten_date_now = () => Date.now();
+
   var abortOnCannotGrowMemory = (requestedSize) => {
       abort(`Cannot enlarge memory arrays to size ${requestedSize} bytes (OOM). Either (1) compile with -sINITIAL_MEMORY=X with X higher than the current value ${HEAP8.length}, (2) compile with -sALLOW_MEMORY_GROWTH which allows increasing the size at runtime, or (3) if you want malloc to return NULL (0) instead of this abort, compile with -sABORTING_MALLOC=0`);
     };
@@ -3593,6 +3595,8 @@ var wasmImports = {
   _emval_invoke: __emval_invoke,
   /** @export */
   _emval_run_destructors: __emval_run_destructors,
+  /** @export */
+  emscripten_date_now: _emscripten_date_now,
   /** @export */
   emscripten_resize_heap: _emscripten_resize_heap,
   /** @export */

@@ -2,20 +2,26 @@ let initialized = false;
 
 var Module = { onRuntimeInitialized: () => { initialized = true; }}
 
+const numStepsInput = document.getElementById("numStepsInput");
 const densityInput = document.getElementById("densityInput");
 const subDensityInput = document.getElementById("subDensityInput");
-const chaosInput = document.getElementById("chaosInput");
 const generateButton = document.getElementById("generateButton");
 const outputText = document.getElementById("outputText");
 const downloadLink = document.getElementById("downloadLink");
 
 generateButton.addEventListener("click", () => { 
-    generateMIDIFile(densityInput.value, subDensityInput.value, chaosInput.value); 
+    generateMIDIFile(numStepsInput.value, densityInput.value, subDensityInput.value); 
 });
 
-function generateMIDIFile(density, subDensity, chaos) {
+function generateMIDIFile(numSteps, density, subDensity) {
     if (!initialized) return;
     
+    numSteps = Number(numSteps);
+    if (numSteps < 0) {
+        alert("Number of Steps is out of range");
+        return;
+    }
+
     density = Number(density);
     if (density < 0 || density > 1) {
         alert("Density is out of range");
@@ -26,13 +32,8 @@ function generateMIDIFile(density, subDensity, chaos) {
         alert("Subdivision Density is out of range");
         return;
     }
-    chaos = Number(chaos);
-    if (chaos < 0 || chaos > 1) {
-        alert("Chaos is out of range");
-        return;
-    }
 
-    let seq = Module.generateSequence(density);
+    let seq = Module.generateSequence(numSteps, density, subDensity);
     outputText.innerText = seq.to_string();
     let buffer = Module.writeToBuffer(seq);
     seq.delete();
