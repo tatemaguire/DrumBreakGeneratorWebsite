@@ -33,7 +33,12 @@ function generateMIDIFile(numSteps, density, subDensity) {
         return;
     }
 
-    let seq = Module.generateSequence(numSteps, density, subDensity);
+    let generator = new Module.DrumBreakGenerator();
+    let configs = new Module.ConfigList();
+    configs.push_back({instrument: 36, density: 1, sub_density: 1});
+
+    let seq = generator.generateSequence(numSteps, configs);
+
     outputText.innerText = seq.to_string();
     let buffer = Module.writeToBuffer(seq);
     seq.delete();
