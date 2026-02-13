@@ -7,19 +7,46 @@
     <title>Drum Break Generator</title>
 </head>
 <body>
-    <p>Number of Steps [int]:</p>
+    <h1>Drum Break Generator</h1>
+    <p>By: Tate Maguire</p>
+    <a href="https://github.com/tatemaguire/DrumBreakGenerator">Source Code GitHub</a>
+    <br>
+    <a href="https://github.com/tatemaguire/DrumBreakGeneratorWebsite">Website GitHub</a>
+    <hr>
+    <h3>Number of Steps [int]:</h3>
     <input id="numStepsInput" type="number" value="16">
-    <p>All Instruments:&nbsp;&nbsp;&nbsp;&nbsp;Density [0.0 - 1.0]:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Subdivision Density[0.0 - 1.0]:</p>
-    <input id="densityInput" type="number" value="0.5">
-    <input id="subDensityInput" type="number" value="0.5">
+    <hr>
+    <h3>Kick</h3>
+    <p>Density [0.0 - 1.0]:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Subdivision Density[0.0 - 1.0]:</p>
+    <input id="kickDensityInput" type="number" value="0.5">
+    <input id="kickSubDensityInput" type="number" value="0.5">
+    <br>
+    <br>
+    <h3>Snare</h3>
+    <p>Density [0.0 - 1.0]:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Subdivision Density[0.0 - 1.0]:</p>
+    <input id="snareDensityInput" type="number" value="0.5">
+    <input id="snareSubDensityInput" type="number" value="0.5">
+    <br>
+    <br>
+    <h3>Closed Hi-hat</h3>
+    <p>Density [0.0 - 1.0]:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Subdivision Density[0.0 - 1.0]:</p>
+    <input id="hhDensityInput" type="number" value="0.5">
+    <input id="hhSubDensityInput" type="number" value="0.5">
+    <br>
+    <br>
+    <h3>Open Hi-hat</h3>
+    <p>Density [0.0 - 1.0]:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Subdivision Density[0.0 - 1.0]:</p>
+    <input id="ohDensityInput" type="number" value="0.5">
+    <input id="ohSubDensityInput" type="number" value="0.5">
+    <hr>
     <br>
     <br>
     <button id="generateButton">Generate MIDI File</button>
     <br>
     <br>
-    <p id="outputText"></p>
-    <br>
     <a id="downloadLink" download="out.mid" style="visibility: hidden;">DOWNLOAD OUT.MID</a>
+    <br>
+    <p id="outputText"></p>
 </body>
 <script async type="text/javascript" src="generator.js"></script>
 <script src="./index.js"></script>
