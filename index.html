@@ -13,40 +13,37 @@
     <br>
     <a href="https://github.com/tatemaguire/DrumBreakGeneratorWebsite">Website GitHub</a>
     <hr>
-    <h3>Number of Steps [int]:</h3>
-    <input id="numStepsInput" type="number" value="16">
+    <h3>Number of Steps:</h3>
+    <input id="numStepsInput" type="number" value="16" min="1">
     <h3>Seed [Optional]:</h3>
     <input id="seedInput" type="number" value="">
     <hr>
     <h3>Kick</h3>
-    <p>Density [0.0 - 1.0]:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Subdivision Density[0.0 - 1.0]:</p>
-    <input id="kickDensityInput" type="number" value="0.5">
-    <input id="kickSubDensityInput" type="number" value="0.5">
-    <br>
-    <br>
+    <p>
+        Density:&nbsp;&nbsp;<input id="kickDensityInput" type="number" value="0.5" min="0" max="1" step="0.01">
+        &nbsp;&nbsp;Subdivision Density:&nbsp;&nbsp;<input id="kickSubDensityInput" type="number" value="0.5" min="0" max="1" step="0.01">
+    </p>
     <h3>Snare</h3>
-    <p>Density [0.0 - 1.0]:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Subdivision Density[0.0 - 1.0]:</p>
-    <input id="snareDensityInput" type="number" value="0.5">
-    <input id="snareSubDensityInput" type="number" value="0.5">
-    <br>
-    <br>
+    <p>
+        Density:&nbsp;&nbsp;<input id="snareDensityInput" type="number" value="0.5" min="0" max="1" step="0.01">
+        &nbsp;&nbsp;Subdivision Density:&nbsp;&nbsp;<input id="snareSubDensityInput" type="number" value="0.5" min="0" max="1" step="0.01">
+    </p>
     <h3>Closed Hi-hat</h3>
-    <p>Density [0.0 - 1.0]:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Subdivision Density[0.0 - 1.0]:</p>
-    <input id="hhDensityInput" type="number" value="0.5">
-    <input id="hhSubDensityInput" type="number" value="0.5">
-    <br>
-    <br>
+    <p>
+        Density:&nbsp;&nbsp;<input id="hhDensityInput" type="number" value="0.5" min="0" max="1" step="0.01">
+        &nbsp;&nbsp;Subdivision Density:&nbsp;&nbsp;<input id="hhSubDensityInput" type="number" value="0.5" min="0" max="1" step="0.01">
+    </p>
     <h3>Open Hi-hat</h3>
-    <p>Density [0.0 - 1.0]:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Subdivision Density[0.0 - 1.0]:</p>
-    <input id="ohDensityInput" type="number" value="0.5">
-    <input id="ohSubDensityInput" type="number" value="0.5">
+    <p>
+        Density:&nbsp;&nbsp;<input id="ohDensityInput" type="number" value="0.5" min="0" max="1" step="0.01">
+        &nbsp;&nbsp;Subdivision Density:&nbsp;&nbsp;<input id="ohSubDensityInput" type="number" value="0.5" min="0" max="1" step="0.01">
+    </p>
     <hr>
-    <br>
     <br>
     <button id="generateButton">Generate MIDI File</button>
     <br>
     <br>
-    <a id="downloadLink" download="out.mid" style="visibility: hidden;">DOWNLOAD OUT.MID</a>
+    <a id="downloadLink" download="out.mid" style="visibility: hidden; font-weight: bolder; font-size: 1.5em;">DOWNLOAD OUT.MID</a>
     <br>
     <p id="outputText"></p>
 </body>

@@ -72,5 +72,5 @@ function generateMIDIFile() {
     var blob = new Blob([buffer], { type: 'audio/midi' });
     downloadLink.href = URL.createObjectURL(blob);
     downloadLink.download = 'out.mid';
-    downloadLink.style = "visibility: visible";
+    downloadLink.style.visibility = "visible";
 }
