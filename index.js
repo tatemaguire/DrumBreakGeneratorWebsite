@@ -3,6 +3,7 @@ let initialized = false;
 var Module = { onRuntimeInitialized: () => { initialized = true; }}
 
 const numStepsInput = document.getElementById("numStepsInput");
+const seedInput = document.getElementById("seedInput");
 
 const kickDensityInput = document.getElementById("kickDensityInput");
 const kickSubDensityInput = document.getElementById("kickSubDensityInput");
@@ -25,6 +26,8 @@ function generateMIDIFile() {
     if (!initialized) return;
 
     const numSteps = Number(numStepsInput.value);
+    const seedNum = Number(seedInput.value);
+
     const kickDensity = Number(kickDensityInput.value);
     const kickSubDensity = Number(kickSubDensityInput.value);
     const snareDensity = Number(snareDensityInput.value);
@@ -52,10 +55,17 @@ function generateMIDIFile() {
         return;
     }
 
-    let generator = new Module.DrumBreakGenerator();
+    let generator = null;
+    if (seedNum) {
+        generator = new Module.DrumBreakGenerator(seedNum);
+    } else {
+        generator = new Module.DrumBreakGenerator();
+    }
+
     let seq = generator.generateSequence(numSteps, configs);
 
-    outputText.innerText = seq.to_string();
+    outputText.innerText = "Seed: " + generator.seed + "\n";
+    outputText.innerText += seq.to_string();
     let buffer = Module.writeToBuffer(seq);
     seq.delete();
 
