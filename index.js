@@ -38,10 +38,10 @@ function generateMIDIFile() {
     const ohSubDensity = Number(ohSubDensityInput.value);
     
     let configs = new Module.ConfigList();
-    configs.push_back({instrument: 36, density: kickDensity, sub_density: kickSubDensity});
-    configs.push_back({instrument: 37, density: snareDensity, sub_density: snareSubDensity});
-    configs.push_back({instrument: 38, density: hhDensity, sub_density: hhSubDensity});
-    configs.push_back({instrument: 39, density: ohDensity, sub_density: ohSubDensity});
+    if (kickDensity !== 0) configs.push_back({instrument: 36, density: kickDensity, sub_density: kickSubDensity});
+    if (snareDensity !== 0) configs.push_back({instrument: 37, density: snareDensity, sub_density: snareSubDensity});
+    if (hhDensity !== 0) configs.push_back({instrument: 38, density: hhDensity, sub_density: hhSubDensity});
+    if (ohDensity !== 0) configs.push_back({instrument: 39, density: ohDensity, sub_density: ohSubDensity});
 
     for (c of configs) {
         if (c.density < 0 || c.density > 1 || c.sub_density < 0 || c.sub_density > 1) {
