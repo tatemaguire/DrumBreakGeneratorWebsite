@@ -3,10 +3,10 @@ By Tate Maguire
 
 For CMPM 147 at UCSC
 
-[Visit the site](https://tatemaguire.github.io/DrumBreakGeneratorWebsite/)
+[https://tatemaguire.github.io/DrumBreakGeneratorWebsite/](https://tatemaguire.github.io/DrumBreakGeneratorWebsite/)
 
 ## Source Code
-[https://github.com/tatemaguire/DrumBreakGenerator](https://github.com/tatemaguire/DrumBreakGenerator)
+[Source Code](https://github.com/tatemaguire/DrumBreakGenerator)
 
 ## Compiling generator.js and generator.wasm using Emscripten
 ```sh
